@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Zemanta::VERSION
   gem.authors       = ["Łukasz Strzebińczyk"]
   gem.email         = ["l.strzebinczyk@gorailsgo.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "This is a ruby client for Zemanta api."
+  gem.summary       = "This is a ruby client for Zemanta api."
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
