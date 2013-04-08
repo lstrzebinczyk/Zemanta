@@ -20,37 +20,35 @@ Or install it yourself as:
 
 You need to set api_key to use the client. If you won't do that, gem will raise an error. There are 2 ways:
   1. Environment variable
-    Set ZEMANTA_KEY key in you environment variables and gem will use it
+    - Set ZEMANTA_KEY key in you environment variables and gem will use it
 
   2. Configuration
-    You can set your api_key in configuration block like this:
-
-    Zemanta.configure do |c|
-      c.api_key = 'your_api_key'
-    end 
+    - You can set your api_key in configuration block like this:
+    - Zemanta.configure { |c| c.api_key = 'your_api_key' } 
 
 After your api_key has been set, all you need to do is:
+
     Zemanta.new("Text you want to send to Zemanta").suggest_markup
 
-    And you will be returned Markup object or error will be raised if Zemanta returns one.
+And you will be returned Markup object or error will be raised if Zemanta returns one.
 
 ## Configuration
 
   There are several configuration options you can set:
 
-  Zemanta.configure do |config|
-    You can pass a hash of custom options that will be passed into each request. It's empty by default.
-    config.custom_request_opts = {}
-  
-    Zemanta supports various response formats. However, this client works only with json, so changing this would be rather bad idea.
-    config.format = "json"
-  
-    This client supports caching, details below. Default is no caching.
-    config.cache_store = Zemanta::Configuration::NullStorage
-  
-    You can pass api_key to zemanta, as described above.
-    config.api_key = "yourapikeyhere"
-  end
+      Zemanta.configure do |config|
+        You can pass a hash of custom options that will be passed into each request. It's empty by default.
+        config.custom_request_opts = {}
+      
+        Zemanta supports various response formats. However, this client works only with json, so changing this would be rather bad idea.
+        config.format = "json"
+      
+        This client supports caching, details below. Default is no caching.
+        config.cache_store = Zemanta::Configuration::NullStorage
+      
+        You can pass api_key to zemanta, as described above.
+        config.api_key = "yourapikeyhere"
+      end
 
 ## Caching
   By default there is no caching. You can pass any cache store to config.cache_store in configuration.
