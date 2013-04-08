@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Zemanta::Fetcher do
-  subject { Zemanta::Fetcher.new }
-
   it "returns the value in cache, if there is one" do
     Zemanta.configure { |config| config.cache_storage = {} }
     stub_zemanta_success!
