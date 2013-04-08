@@ -1,15 +1,11 @@
 class Zemanta
   class Configuration
     class NullStorage
-      def fetch
+      def []
         nil
       end
 
-      def method_missing(*args)
-        nil
-      end
-
-      def save(response)
+      def []=(response)
       end
     end
   end
