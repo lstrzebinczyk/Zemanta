@@ -1,11 +1,11 @@
 class Zemanta
   class Configuration
     class NullStorage
-      def []
+      def [](key)
         nil
       end
 
-      def []=(response)
+      def []=(key,value)
       end
     end
   end

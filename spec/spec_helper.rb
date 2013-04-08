@@ -25,3 +25,9 @@ end
 def fixture(path)
   JSON.parse(File.read("spec/fixtures/zemanta/#{path}.json"))
 end
+
+def stub_zemanta_success!
+  stub_request(:post, /api.zemanta.com/).
+    to_return(:status => 200, :body => "{\"response\":\"zemanta_response\"}").times(1).then.
+    to_return(:status => 404)
+end
