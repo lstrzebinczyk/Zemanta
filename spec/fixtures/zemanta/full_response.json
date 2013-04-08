@@ -1,0 +1,75 @@
+{
+  "status": "ok",
+  "articles": [
+    {
+      "confidence": 0.00114,
+      "published_datetime": "2013-02-23T06:39:14Z",
+      "title": "Tiananmen Square- Forbidden City- Summer Palace - Beijing, China",
+      "url": "http://blog.travelpod.com/travel-blog-entries/peregrinations/1/1315695831/tpod.html",
+      "retweets": 0,
+      "text_preview": "Tiananmen Square- Forbidden City- Summer Palace - Beijing, China\nBeijing, China\nThis was our last day of touring and it was by far the most arduous of the whole trip. I have no idea how anyone can do this in the heat and humidity of July and August. It was just the end of May and the heat did me in. Even though our guide took a very leisurely pace...",
+      "article_id": 147457867,
+      "zemified": 0
+    }
+  ],
+  "markup": {
+    "text": "",
+    "links": [
+      {
+        "relevance": 0.8093,
+        "confidence": 0.873863,
+        "entity_type": [
+          "/location/location"
+        ],
+        "target": [
+          {
+            "url": "http://maps.google.com/maps?ll=27.2359361111,100.132480556&spn=0.01,0.01&q=27.2359361111,100.132480556 (Tiger%20Leaping%20Gorge)&t=h",
+            "type": "geolocation",
+            "title": "Tiger Leaping Gorge"
+          }
+        ],
+        "anchor": "Tiger Leaping Gorge"
+      }
+    ]
+  },
+  "images": [
+    {
+      "url_m_h": 240,
+      "confidence": 0.5,
+      "url_s_h": 75,
+      "attribution": "Naxi Horseman (Photo credit: <a href=\"http://www.flickr.com/photos/85904220@N00/3182514166\">Renato @ Mainland China</a>)",
+      "description": "Naxi Horseman",
+      "license": "License CreativeCommons NonCommercial NoDerivs",
+      "url_l_w": 365,
+      "url_s": "http://farm4.static.flickr.com/3115/3182514166_186de79cab_s.jpg",
+      "source_url": "http://www.flickr.com/photos/85904220@N00/3182514166",
+      "url_m": "http://farm4.static.flickr.com/3115/3182514166_186de79cab_m.jpg",
+      "url_l": "http://farm4.static.flickr.com/3115/3182514166_186de79cab.jpg",
+      "url_l_h": 500,
+      "url_s_w": 75,
+      "url_m_w": 175
+    }
+  ],
+  "signature": "<div class=\"zemanta-pixie\"><a class=\"zemanta-pixie-a\" href=\"http://www.zemanta.com/?px\" title=\"Enhanced by Zemanta\"><img class=\"zemanta-pixie-img\" src=\"http://img.zemanta.com/zemified_e.png?x-id=27556886-7e10-4b64-8bff-9fa4352fd524\" alt=\"Enhanced by Zemanta\" /></a></div>",
+  "keywords": [
+    {
+      "confidence": 0.267918,
+      "scheme": "general",
+      "name": "Beijing"
+    }
+  ],
+  "rid": "27556886-7e10-4b64-8bff-9fa4352fd524",
+  "categories": [],
+  "rich_objects": [
+    {
+      "title": "Tiananmen Square",
+      "url": "http://maps.google.com/maps?ll=39.9033333333,116.391666667&spn=0.01,0.01&q=39.9033333333,116.391666667 (Tiananmen%20Square)&t=h",
+      "thumbnail_width": 75,
+      "height": 250,
+      "width": 300,
+      "html": "<iframe width=\"300\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"http://maps.google.com/?ie=UTF8&amp;center=39.9033333333,116.391666667&amp;spn=0.01,0.01&amp;q=39.9033333333,116.391666667 (Tiananmen%20Square)&amp;t=h&amp;output=embed&amp;sensor=false&amp;s=AARTsJqzARj-Z8VnW5pkPMLMmZbqrJcYpw\"></iframe><br/><small><a href=\"http://maps.google.com/?ie=UTF8&amp;center=39.9033333333,116.391666667&amp;spn=0.01,0.01&amp;q=39.9033333333,116.391666667 (Tiananmen%20Square)&amp;t=h&amp;source=embed&amp;sensor=false\" style=\"color:#0000FF;text-align:left\">View Larger Map</a></small>",
+      "thumbnail_height": 75,
+      "thumbnail_url": "http://maps.google.com/staticmap?size=300x250&sensor=false&center=39.9033333333,116.391666667&zoom=15"
+    }
+  ]
+}

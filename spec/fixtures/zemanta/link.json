@@ -1,0 +1,15 @@
+{
+  "relevance": 0.8093,
+  "confidence": 0.873863,
+  "entity_type": [
+    "/location/location"
+  ],
+  "target": [
+    {
+      "url": "www.this.is.an/url",
+      "type": "geolocation",
+      "title": "Tiger Leaping Gorge"
+    }
+  ],
+  "anchor": "Tiger Leaping Gorge"
+}
