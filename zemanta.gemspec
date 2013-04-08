@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'zemanta/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "zemanta"
+  gem.name          = "zemanta_client"
   gem.version       = Zemanta::VERSION
   gem.authors       = ["Łukasz Strzebińczyk"]
   gem.email         = ["l.strzebinczyk@gorailsgo.com"]

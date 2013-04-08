@@ -6,7 +6,7 @@ This is a ruby client to awesome Zemanta app. At this point it only supports sug
 
 Add this line to your application's Gemfile:
 
-    gem 'zemanta'
+    gem 'zemanta_client'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install zemanta
+    $ gem install zemanta_client
 
 ## Usage
 
