@@ -19,22 +19,6 @@ class Zemanta
     Markup.new(suggest_markup_request(opts))
   end
 
-
-  # Usage:
-  # Zemanta.configure do |config|
-  #   You can pass a hash of custom options that will be passed into each request
-  #   config.custom_request_opts = {target_types: "geolocation"}
-  #
-  #   If you prefer format other than json for some reason, go for it!
-  #   config.format = "json"
-  #     note: It won't work, currently there is no support for formats other than json.
-  #
-  #   You can cache Zemanta responses if you wish. You just need to pass any key => value store in here:
-  #   config.cache_store = {}  # default is no caching
-  #
-  #   You can pass api_key to zemanta here
-  #   config.api_key = "yourapikeyhere"
-  # end
   def self.configure
     yield config
   end

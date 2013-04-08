@@ -6,8 +6,8 @@ require 'zemanta/version'
 Gem::Specification.new do |gem|
   gem.name          = "zemanta"
   gem.version       = Zemanta::VERSION
-  gem.authors       = ["TODO: Write your name"]
-  gem.email         = ["TODO: Write your email address"]
+  gem.authors       = ["Łukasz Strzebińczyk"]
+  gem.email         = ["l.strzebinczyk@gorailsgo.com"]
   gem.description   = %q{TODO: Write a gem description}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
