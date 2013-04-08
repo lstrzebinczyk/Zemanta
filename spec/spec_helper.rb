@@ -31,3 +31,8 @@ def stub_zemanta_success!
     to_return(:status => 200, :body => "{\"response\":\"zemanta_response\"}").times(1).then.
     to_return(:status => 404)
 end
+
+def stub_zemanta_full!
+  stub_request(:post, /api.zemanta.com/).
+    to_return(:status => 200, :body => {markup: fixture("markup")}.to_json)
+end
