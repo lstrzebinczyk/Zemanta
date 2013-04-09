@@ -1,10 +1,6 @@
 class Zemanta
   class Markup
     class Link
-      extend ActiveSupport::Autoload
-
-      autoload :Target
-
       attr_reader :relevance, :confidence, :entity_type, :target, :anchor
 
       def initialize(opts = {})

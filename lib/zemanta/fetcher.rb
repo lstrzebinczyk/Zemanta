@@ -1,10 +1,5 @@
 class Zemanta
   class Fetcher
-    extend ActiveSupport::Autoload
-
-    autoload :Cache
-    autoload :Web
-
     def initialize(opts = {})
       @opts = opts
     end

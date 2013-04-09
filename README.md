@@ -62,3 +62,8 @@ And you will be returned Markup object or error will be raised if Zemanta return
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Changelog
+
+0.0.2 - Got rid of autoloads.
+0.0.1 - Initial release. Support for suggest_markup method and caching.

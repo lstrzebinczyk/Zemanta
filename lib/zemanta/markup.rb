@@ -1,9 +1,5 @@
 class Zemanta
   class Markup
-    extend ActiveSupport::Autoload
-
-    autoload :Link
-
     attr_reader :text, :links
 
     def initialize(opts = {})

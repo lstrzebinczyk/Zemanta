@@ -1,9 +1,5 @@
 class Zemanta
   class Configuration
-    extend ActiveSupport::Autoload
-
-    autoload :NullStorage
-
     attr_accessor :custom_request_opts, :format, :api_key, :cache_storage
 
     def initialize

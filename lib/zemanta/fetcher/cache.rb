@@ -1,12 +1,6 @@
 class Zemanta
   class Fetcher
     class Cache
-      extend ActiveSupport::Autoload
-
-      autoload :NullResponse
-      autoload :Response
-      autoload :Key
-
       def initialize(opts = {})
         @key = Key.new(opts).to_s
       end
