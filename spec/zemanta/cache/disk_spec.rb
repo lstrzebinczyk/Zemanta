@@ -37,7 +37,7 @@ describe Zemanta::Cache::Disk do
     let(:value) { 'text-value' }
 
     it "creates new file for specified key" do
-      Pathname.new(storage.db.join(key)).delete
+      Pathname.new(storage.db.join(key)).delete if storage.db.join(key).exist?
       Pathname.new(storage.db.join(key)).should_not exist
 
       storage[key] = value
