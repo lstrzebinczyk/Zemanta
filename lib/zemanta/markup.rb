@@ -14,6 +14,7 @@ module Zemanta
     private
 
     def self.suggest_markup_request(text, opts)
+      return {'links' => []} if text.to_s.empty?
       request({ text: text, method: "zemanta.suggest_markup" }.merge(opts))["markup"]
     end
 
