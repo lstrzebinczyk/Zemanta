@@ -21,7 +21,7 @@ module Zemanta
     end
 
     def parse(data)
-      JSON.parse(data)
+      Parser.new(data).parse
     end
 
     def request_opts
