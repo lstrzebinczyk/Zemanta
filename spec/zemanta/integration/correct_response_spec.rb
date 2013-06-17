@@ -5,7 +5,7 @@ describe "suggest_markup" do
     stub_zemanta_full!
   end
 
-  let(:markup) { Zemanta.new("some text").suggest_markup }
+  let(:markup) { Zemanta::Markup.fetch("some text") }
   
   it "responds to #text" do
     markup.text.should == "text"

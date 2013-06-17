@@ -12,5 +12,10 @@ describe Zemanta::Markup do
       subject.links.should be_a Array
       subject.links.first.should be_a Zemanta::Markup::Link
     end
+
+    it "returns Markup object with fetch" do
+      stub_zemanta_full!
+      Zemanta::Markup.fetch("This is a text").should be_a Zemanta::Markup
+    end
   end
 end

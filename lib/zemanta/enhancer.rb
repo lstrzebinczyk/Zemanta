@@ -26,15 +26,7 @@ class Zemanta
     end
 
     def suggest_markup(opts = {})
-      Markup.new(suggest_markup_request(opts))
-    end
-
-    def suggest_markup_request(opts)
-      @response ||= request({ text: @text, method: "zemanta.suggest_markup" }.merge(opts))['markup']
-    end
-
-    def request(opts)
-      Fetcher.new(opts).post
+      Markup.fetch(@text, opts)
     end
   end
 end

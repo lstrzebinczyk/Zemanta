@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe "incorrect api key" do
-  let(:markup) { Zemanta.new("some text").suggest_markup }
+  let(:markup) { Zemanta::Markup.fetch("some text") }
 
   it "raises exception when 403 error returned" do
     stub_zemanta_exception!
