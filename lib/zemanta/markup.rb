@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Markup
     attr_reader :text, :links
 

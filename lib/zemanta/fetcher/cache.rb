@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Fetcher
     class Cache
       def initialize(opts = {})

@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   module Cache
     class Disk
       attr_accessor :db

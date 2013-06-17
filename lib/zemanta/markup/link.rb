@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Markup
     class Link
       attr_reader :relevance, :confidence, :entity_type, :target, :anchor

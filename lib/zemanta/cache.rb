@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   module Cache
   end
 end

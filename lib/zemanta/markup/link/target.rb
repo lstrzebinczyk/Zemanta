@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Markup
     class Link
       class Target

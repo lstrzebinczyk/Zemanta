@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Enhancer
     def initialize(text, opts = {})
       @text = text

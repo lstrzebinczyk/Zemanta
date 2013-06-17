@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Fetcher
     class Web
       def initialize(opts = {})

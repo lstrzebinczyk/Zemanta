@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Fetcher
     def initialize(opts = {})
       @opts = opts

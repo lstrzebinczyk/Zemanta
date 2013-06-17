@@ -17,7 +17,7 @@ require 'zemanta/markup/link'
 require 'zemanta/markup/link/target'
 require 'zemanta/enhancer'
 
-class Zemanta
+module Zemanta
   def self.configure
     yield config
   end

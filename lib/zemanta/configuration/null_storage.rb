@@ -1,4 +1,4 @@
-class Zemanta
+module Zemanta
   class Configuration
     class NullStorage
       def [](key)
