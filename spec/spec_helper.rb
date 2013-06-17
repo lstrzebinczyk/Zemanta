@@ -41,3 +41,8 @@ def stub_zemanta_exception!
   stub_request(:post, /api.zemanta.com/).
     to_return(:status => 200, :body => '<h1>403 Developer Inactive</h1>')
 end
+
+def stub_zemanta_enhancer!
+  stub_request(:post, /api.zemanta.com/).
+    to_return(:status => 200, :body => fixture("enhancer").to_json)
+end

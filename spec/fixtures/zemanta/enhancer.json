@@ -1,0 +1,37 @@
+{
+  "markup":{
+    "text":"",
+    "links":[
+      {
+        "relevance":0.91956,
+        "confidence":0.846373,
+        "entity_type":[
+
+        ],
+        "target":[
+          {
+            "url":"http://www.some.url/leading_to/inca_trail",
+            "type":"geolocation",
+            "title":"The Inca Trail"
+          }
+        ],
+        "anchor":"Inca trail to Machu Picchu"
+      },
+      {
+        "relevance":0.881943,
+        "confidence":0.878267,
+        "entity_type":[
+          "/location/location"
+        ],
+        "target":[
+          {
+            "url":"http://www.some.url/about/machu_picchu",
+            "type":"geolocation",
+            "title":"Machu Picchu"
+          }
+        ],
+        "anchor":"Machu Pichu"
+      }
+    ]
+  }
+}

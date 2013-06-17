@@ -13,8 +13,9 @@ require 'zemanta/fetcher/cache/null_response'
 require 'zemanta/fetcher/cache/response'
 require 'zemanta/fetcher/cache/key'
 require 'zemanta/markup'
-require "zemanta/markup/link"
+require 'zemanta/markup/link'
 require 'zemanta/markup/link/target'
+require 'zemanta/enhancer'
 
 class Zemanta
   def initialize(text)
