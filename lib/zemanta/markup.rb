@@ -8,7 +8,18 @@ module Zemanta
     end
 
     def self.fetch(text, opts = {})
-      new(suggest_markup_request(text, opts))
+      relevance  = opts.delete(:relevance)  || 0
+      confidence = opts.delete(:confidence) || 0
+
+      new(suggest_markup_request(text, opts)).tap do |markup|
+        markup.drop_links_below(relevance, confidence)
+      end
+    end
+
+    def drop_links_below(relevance, confidence)
+      @links.keep_if do |link|
+        link.above?(relevance, confidence)
+      end
     end
 
     private

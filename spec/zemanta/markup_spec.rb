@@ -14,13 +14,13 @@ describe Zemanta::Markup do
     end
 
     context ".fetch" do
+      before(:each) { stub_zemanta_enhancer! }
+
       it "returns Markup object for nonempty string" do
-        stub_zemanta_full!
         Zemanta::Markup.fetch("This is a text").should be_a Zemanta::Markup
       end
 
       it "returns Markup object for nil" do
-        stub_zemanta_full!
         Zemanta::Markup.fetch(nil).should be_a Zemanta::Markup
       end
 
@@ -37,6 +37,35 @@ describe Zemanta::Markup do
       it "does not hit fetcher if empty string passed" do
         Zemanta::Fetcher.any_instance.should_not_receive(:post)
         Zemanta::Markup.fetch("")
+      end
+
+      it "calls drop_links_below on created markup" do
+        Zemanta::Markup.any_instance.should_receive(:drop_links_below)
+        Zemanta::Markup.fetch("This is a text")
+      end
+
+      it "returns every link if no relevance or confidence passed" do
+        Zemanta::Markup.fetch("This is a text").links.count.should == 2
+      end
+
+    end
+
+    context "drop_links_below" do
+      subject { Zemanta::Markup.new(fixture("enhancer")['markup'])}
+
+      it "drops links below given relevance" do
+        subject.drop_links_below(0.9, 0)
+        subject.links.map(&:relevance).should == [0.91956]
+      end
+
+      it "drops links below given confidence" do
+        subject.drop_links_below(0, 0.85)
+        subject.links.map(&:confidence).should == [0.878267]
+      end
+
+      it "drops links below both given condifence and relevance" do
+        subject.drop_links_below(0.9, 0.9)
+        subject.links.empty?.should == true
       end
     end
   end
