@@ -16,7 +16,7 @@ Or install it yourself as:
 
     $ gem install zemanta_client
 
-## Usage
+## Api key
 
 You need to set api_key to use the client. If you won't do that, gem will raise an error. There are 2 ways:
   1. Environment variable
@@ -26,6 +26,8 @@ You need to set api_key to use the client. If you won't do that, gem will raise 
     - You can set your api_key in configuration block like this:
     - Zemanta.configure { |c| c.api_key = 'your_api_key' } 
 
+
+## Usage
 
   Two use cases are implemented: Retrieving suggest_markup data and enhancing the text.
 
