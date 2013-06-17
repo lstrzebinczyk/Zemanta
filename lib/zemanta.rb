@@ -2,7 +2,6 @@ require 'typhoeus'
 require 'json'
 require 'digest/md5'
 
-require 'zemanta/cache'
 require 'zemanta/cache/disk'
 require 'zemanta/configuration'
 require 'zemanta/configuration/null_storage'
