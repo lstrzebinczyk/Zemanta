@@ -6,7 +6,7 @@ module Zemanta
       end
 
       def parse
-        JSON.parse(@json)
+        Yajl::Parser.parse(@json)
       end
     end
   end

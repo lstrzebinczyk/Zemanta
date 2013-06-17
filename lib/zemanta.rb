@@ -1,5 +1,5 @@
 require 'typhoeus'
-require 'json'
+require 'yajl'
 require 'digest/md5'
 
 require 'zemanta/cache/disk'

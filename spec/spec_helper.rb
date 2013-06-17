@@ -1,5 +1,6 @@
 require 'zemanta'
 require 'webmock/rspec'
+require 'json'
 
 Zemanta.configure do |c|
   c.api_key = 'fake_key'
