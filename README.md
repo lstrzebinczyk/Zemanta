@@ -19,48 +19,66 @@ Or install it yourself as:
 ## Api key
 
 You need to set api_key to use the client. If you won't do that, gem will raise an error. There are 2 ways:
+
   1. Environment variable
-    - Set ZEMANTA_KEY key in you environment variables and gem will use it
+    - Set `ZEMANTA_KEY` key in you environment variables and gem will use it
 
   2. Configuration
     - You can set your api_key in configuration block like this:
-    - Zemanta.configure { |c| c.api_key = 'your_api_key' } 
+
+      ```ruby
+        Zemanta.configure { |c| c.api_key = 'your_api_key' } 
+      ```
 
 
 ## Usage
 
-  Two use cases are implemented: Retrieving suggest_markup data and enhancing the text.
+Two use cases are implemented: 
+  
+  1. Retrieving suggest_markup data and enhancing the text.
 
-  1. Zemanta::Markup.fetch(text, opts = {})
+    ```ruby
+    Zemanta::Markup.fetch(text, opts = {})
+    ```
+    
     It will fetch suggest_markup data for passed text from Zemanta api and wrap it in custom classes.
 
-  2. Zemanta::Enhancer.new(text, opts = {}).enhance
+  
+  2. Enhancing the text with links:
+  
+    ```ruby
+    Zemanta::Enhancer.new(text, opts = {}).enhance
+    ```
+  
     It will fetch suggest_markup data for given text and for every returned link it will wrap the keyword with this link.
-    Than it will return updated text.
+    Then it will return the updated text.
 
-  In both relevance and confidence keys can be passes inside opts to filter any links that are below passed values.
+In both relevance and confidence keys can be passes inside opts to filter any links that are below passed values.
 
 ## Configuration
 
-  There are several configuration options you can set:
+There are several configuration options you can set:
 
-      Zemanta.configure do |config|
-        You can pass a hash of custom options that will be passed into each request. It's empty by default.
-        config.custom_request_opts = {}
-      
-        Zemanta supports various response formats. However, this client works only with json, so changing this would be rather bad idea.
-        config.format = "json"
-      
-        This client supports caching, details below. Default is no caching.
-        config.cache_store = Zemanta::Configuration::NullStorage
-      
-        You can pass api_key to zemanta, as described above.
-        config.api_key = "yourapikeyhere"
-      end
+```ruby
+Zemanta.configure do |config|
+  # You can pass a hash of custom options that will be passed into each request. It's empty by default.
+  config.custom_request_opts = {}
+
+  # Zemanta supports various response formats. However, this client works only with json, so changing this would be rather bad idea.
+  config.format = "json"
+
+  # This client supports caching, details below. Default is no caching.
+  config.cache_store = Zemanta::Configuration::NullStorage
+
+  # You can pass api_key to zemanta, as described above.
+  config.api_key = "yourapikeyhere"
+end
+```
 
 ## Caching
-  By default there is no caching. You can pass any cache store to config.cache_store in configuration.
-  The only expectation is that it answers to [] and []= methods. For example, you can pass ruby hash or Cache::Disk.new
+
+  By default there is no caching. You can pass any cache store to `config.cache_store` in configuration.
+  The only expectation is that it answers to `[]` and `[]=` methods. For example, you can pass ruby hash or `Cache::Disk.new`
   object to use simple file system storage.
 
 ## Contributing
