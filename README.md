@@ -91,6 +91,7 @@ end
 
 ## Changelog
 
+0.0.4 - fixed yajl require in gemspec
 0.0.3 - Added Enhancer class, used yajl for json parsing, changed external gem api.
 0.0.2 - Got rid of autoloads.
 0.0.1 - Initial release. Support for suggest_markup method and caching.
