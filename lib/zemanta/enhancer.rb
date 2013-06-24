@@ -1,5 +1,9 @@
 module Zemanta
   class Enhancer
+    # Options:
+    #
+    #  no_duplicates (default: false) - ensures links are used once
+    #
     def initialize(text, opts = {})
       @text = text
       @opts = opts
@@ -15,7 +19,11 @@ module Zemanta
     def enhance!
       words_to_anchor(@opts).each do |dictionary|
         link = "<a href=#{dictionary[:link]}>#{dictionary[:word]}</a>"
-        @text.gsub!(dictionary[:word], link)
+        if @opts[:no_duplicates]
+          @text.sub!(dictionary[:word], link)
+        else
+          @text.gsub!(dictionary[:word], link)
+        end
       end
     end
 
