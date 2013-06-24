@@ -49,6 +49,10 @@ Two use cases are implemented:
     ```ruby
     Zemanta::Enhancer.new(text, opts = {}).enhance
     ```
+
+    Options:
+      no_duplicates (default: false) - ensures links are used once
+    
   
     It will fetch suggest_markup data for given text and for every returned link it will wrap the keyword with this link.
     Then it will return the updated text.
