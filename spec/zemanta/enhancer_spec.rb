@@ -22,5 +22,20 @@ describe Zemanta::Enhancer do
         output.scan('<a').should have(1).elements
       end
     end
+
+    describe "skip option" do
+      it "skips links whose URL matches a user-provided regexp" do
+        stub_zemanta_enhancer!
+        output = Zemanta::Enhancer.new(input, skip: /machu_picchu/).enhance
+        output.scan('<a').should have(1).elements
+      end
+
+      it "doesn't affect the links that don't match thr user-provided regexp" do
+        stub_zemanta_enhancer!
+        output = Zemanta::Enhancer.new(input, skip: /macchu_picchu/).enhance
+        output.scan('<a').should have(2).elements
+      end
+
+    end
   end
 end

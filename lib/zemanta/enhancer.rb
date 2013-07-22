@@ -3,7 +3,7 @@ module Zemanta
     # Options:
     #
     #  no_duplicates (default: false) - ensures links are used once
-    #
+    #  skip - regexp for URLs not to be hot-linked
     def initialize(text, opts = {})
       @text = text
       @opts = opts
@@ -18,7 +18,13 @@ module Zemanta
 
     def enhance!
       words_to_anchor(@opts).each do |dictionary|
-        link = "<a href=#{dictionary[:link]}>#{dictionary[:word]}</a>"
+        url = dictionary[:link]
+
+        if @opts[:skip]
+          next if url =~ @opts[:skip]
+        end
+
+        link = "<a href=#{url}>#{dictionary[:word]}</a>"
         if @opts[:no_duplicates]
           @text.sub!(dictionary[:word], link)
         else

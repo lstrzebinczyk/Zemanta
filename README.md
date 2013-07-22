@@ -1,6 +1,6 @@
 # Zemanta
 
-This is a ruby client to awesome Zemanta app. 
+This is a ruby client to awesome Zemanta app.
 
 ## Installation
 
@@ -27,33 +27,34 @@ You need to set api_key to use the client. If you won't do that, gem will raise 
     - You can set your api_key in configuration block like this:
 
       ```ruby
-        Zemanta.configure { |c| c.api_key = 'your_api_key' } 
+        Zemanta.configure { |c| c.api_key = 'your_api_key' }
       ```
 
 
 ## Usage
 
-Two use cases are implemented: 
-  
+Two use cases are implemented:
+
   1. Retrieving suggest_markup data and enhancing the text.
 
     ```ruby
     Zemanta::Markup.fetch(text, opts = {})
     ```
-    
+
     It will fetch suggest_markup data for passed text from Zemanta api and wrap it in custom classes.
 
-  
+
   2. Enhancing the text with links:
-  
+
     ```ruby
     Zemanta::Enhancer.new(text, opts = {}).enhance
     ```
 
     Options:
-      no_duplicates (default: false) - ensures links are used once
-    
-  
+      * `no_duplicates` (default: false) - ensures links are used once
+      * `skip` (default: nil) - URL regexp of the links that should be skipped
+
+
     It will fetch suggest_markup data for given text and for every returned link it will wrap the keyword with this link.
     Then it will return the updated text.
 
