@@ -53,7 +53,7 @@ Two use cases are implemented:
     Options:
       * `no_duplicates` (default: false) - ensures links are used once
       * `skip` (default: nil) - URL regexp of the links that should be skipped
-
+      * `strip_query_string` - removes the query string part of the suggested links urls
 
     It will fetch suggest_markup data for given text and for every returned link it will wrap the keyword with this link.
     Then it will return the updated text.
