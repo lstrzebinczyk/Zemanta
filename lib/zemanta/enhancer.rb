@@ -3,6 +3,8 @@ module Zemanta
     # Options:
     #
     #  no_duplicates (default: false) - ensures links are used once
+    #  skip - regexp for URLs not to be hot-linked
+    #  strip_query_string - remove the query string from urls
     #
     def initialize(text, opts = {})
       @text = text
@@ -18,7 +20,15 @@ module Zemanta
 
     def enhance!
       words_to_anchor(@opts).each do |dictionary|
-        link = "<a href=#{dictionary[:link]}>#{dictionary[:word]}</a>"
+        url = dictionary[:link]
+
+        if @opts[:skip]
+          next if url =~ @opts[:skip]
+        end
+
+        url = strip_query_string(url) if @opts[:strip_query_string]
+
+        link = "<a href=#{url}>#{dictionary[:word]}</a>"
         if @opts[:no_duplicates]
           @text.sub!(dictionary[:word], link)
         else
@@ -35,6 +45,11 @@ module Zemanta
 
     def suggest_markup(opts = {})
       Markup.fetch(@text, opts)
+    end
+
+    def strip_query_string(url)
+      return nil unless url
+      url.gsub(/\?.*$/, '')
     end
   end
 end
