@@ -96,6 +96,7 @@ end
 
 ## Changelog
 
+0.0.6 - Added #skip and #strip_query_string options to enhancer
 0.0.5 - Added #no_duplicates option to Enhancer
 0.0.4 - Fixed yajl require in gemspec
 0.0.3 - Added Enhancer class, used yajl for json parsing, changed external gem api.
