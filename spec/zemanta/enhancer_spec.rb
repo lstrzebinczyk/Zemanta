@@ -22,5 +22,29 @@ describe Zemanta::Enhancer do
         output.scan('<a').should have(1).elements
       end
     end
+
+    describe "skip option" do
+      it "skips links whose URL matches a user-provided regexp" do
+        stub_zemanta_enhancer!
+        output = Zemanta::Enhancer.new(input, skip: /machu_picchu/).enhance
+        output.scan('<a').should have(1).elements
+      end
+
+      it "doesn't affect the links that don't match thr user-provided regexp" do
+        stub_zemanta_enhancer!
+        output = Zemanta::Enhancer.new(input, skip: /macchu_picchu/).enhance
+        output.scan('<a').should have(2).elements
+      end
+    end
+
+    describe "strip_query_string" do
+      it "strips the query string from the suggested urls" do
+        text = "Hello foo bar"
+        suggestions = [{ word: 'foo', link: "http://bar.com/foo?bar=123" }]
+        Zemanta::Enhancer.any_instance.stub(words_to_anchor: suggestions)
+        output = Zemanta::Enhancer.new(text, strip_query_string: true).enhance
+        output.should == "Hello <a href=http://bar.com/foo>foo</a> bar"
+      end
+    end
   end
 end
