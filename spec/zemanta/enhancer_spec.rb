@@ -43,7 +43,7 @@ describe Zemanta::Enhancer do
         suggestions = [{ word: 'foo', link: "http://bar.com/foo?bar=123" }]
         Zemanta::Enhancer.any_instance.stub(words_to_anchor: suggestions)
         output = Zemanta::Enhancer.new(text, strip_query_string: true).enhance
-        output.should == "Hello <a href=http://bar.com/foo>foo</a> bar"
+        output.should == "Hello <a href='http://bar.com/foo'>foo</a> bar"
       end
     end
   end
