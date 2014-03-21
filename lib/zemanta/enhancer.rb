@@ -28,7 +28,7 @@ module Zemanta
 
         url = strip_query_string(url) if @opts[:strip_query_string]
 
-        link = "<a href='#{url}'>#{dictionary[:word]}</a>)"
+        link = "<a href='#{url}'>#{dictionary[:word]}</a>"
         if @opts[:no_duplicates]
           @text.sub!(dictionary[:word], link)
         else
