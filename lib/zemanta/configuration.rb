@@ -1,6 +1,7 @@
 module Zemanta
   class Configuration
-    attr_accessor :custom_request_opts, :format, :api_key, :cache_storage
+    attr_accessor :custom_request_opts, :format, :api_key, :cache_storage,
+                  :character_limit
 
     def initialize
       @custom_request_opts = {}
