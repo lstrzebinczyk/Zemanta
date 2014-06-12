@@ -34,6 +34,13 @@ describe Zemanta::Markup do
         Zemanta::Markup.fetch("").should be_a Zemanta::Markup
       end
 
+      it "truncated text that is over the characted limit" do
+        Zemanta.config.character_limit = 10
+        text = 'Text over 10 characters'
+        Zemanta::Fetcher.should_receive(:new).with(hash_including(text: text[0..9])).and_call_original
+        Zemanta::Markup.fetch(text)
+      end
+
       it "does not hit fetcher if empty string passed" do
         Zemanta::Fetcher.any_instance.should_not_receive(:post)
         Zemanta::Markup.fetch("")
