@@ -1,4 +1,5 @@
 module Zemanta
+
   class Markup
     attr_reader :text, :links
 
@@ -26,11 +27,15 @@ module Zemanta
 
     def self.suggest_markup_request(text, opts)
       return {'links' => []} if text.to_s.empty?
-      request({ text: text, method: "zemanta.suggest_markup" }.merge(opts))["markup"]
+      request({ text: shortened_text(text), method: "zemanta.suggest_markup" }.merge(opts))["markup"]
     end
 
     def self.request(opts)
       Fetcher.new(opts).post
+    end
+
+    def self.shortened_text(text)
+      text[0..Zemanta.config.character_limit-1]
     end
   end
 end
